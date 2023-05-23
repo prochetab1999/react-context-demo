@@ -5,9 +5,9 @@ import InfoCard from "./InfoCard";
 
 function App() {
   const [response, setResponse] = useState([]);
-  const [personSelected, setPersonSelected] = useState("");
+  const personSelected= localStorage.getItem("person");
   const onPersonSelected = (personName) => {
-    setPersonSelected(personName);
+    localStorage.setItem("person",personName);
   };
   useEffect(() => {
     fetch("https://jsonplaceholder.typicode.com/users")
